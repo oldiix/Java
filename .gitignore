@@ -1,0 +1,28 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+out/
+
+# Компільовані файли Java
+*.class
+
+# Логи
+*.log
+
+# Файли налаштувань OS
+.DS_Store
+Thumbs.db
+
+# Файли від build tool (якщо використовуєш Maven/Gradle)
+target/
+build/
+
+# Конфігурації середовища
+*.jar
+*.war
+*.ear
+
+# Інші тимчасові файли
+*.tmp
+*.swp
