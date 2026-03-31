@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
 
-        int x = 526;
+        int x = 527;
         switch (x % 2) {
             case 0:
             System.out.println("Парне");
