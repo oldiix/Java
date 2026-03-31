@@ -24,7 +24,7 @@ public class task8 {
     static class Labrador extends Dog {
         @Override
         public void makeSound() {
-            System.out.println("Labrador: Gav! I'm friendly!");
+            System.out.println("Labrador: Gav, Labrador!");
         }
     }
 

@@ -7,6 +7,7 @@ import java.util.Set;
 
 public class task2 {
     public static <T> Set<T> getUniqueElements(List<T> list) {
+
         return new HashSet<>(list);
     }
 
