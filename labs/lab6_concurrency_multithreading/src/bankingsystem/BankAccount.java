@@ -1,7 +1,7 @@
 package bankingsystem;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class BankAccount {
+public class    BankAccount {
     private final String id;
     private double balance;
     private final ReentrantLock lock = new ReentrantLock();
@@ -53,8 +53,16 @@ public class BankAccount {
             return;
         }
 
-        BankAccount first = from.id.compareTo(to.id) < 0 ? from : to;
-        BankAccount second = from.id.compareTo(to.id) < 0 ? to : from;
+        BankAccount first;
+        BankAccount second;
+
+        if (from.id.compareTo(to.id) < 0) {
+            first = from;
+            second = to;
+        } else {
+            first = to;
+            second = from;
+        }
 
         first.lock.lock();
         second.lock.lock();
