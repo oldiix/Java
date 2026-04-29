@@ -1,0 +1,253 @@
+### DOCTORS
+
+GET http://localhost:8080/api/v1/doctors
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/v1/doctors/1
+Accept: application/json
+
+###
+
+POST http://localhost:8080/api/v1/doctors
+Content-Type: application/json
+
+{
+  "firstName": "Олена",
+  "lastName": "Коваль",
+  "specialization": "Кардіолог",
+  "licenseNumber": "UA-55555"
+}
+
+###
+
+PUT http://localhost:8080/api/v1/doctors/1
+Content-Type: application/json
+
+{
+  "firstName": "Іван",
+  "lastName": "Петренко",
+  "specialization": "Хірург",
+  "licenseNumber": "UA-12345"
+}
+
+###
+
+PATCH http://localhost:8080/api/v1/doctors/1
+Content-Type: application/json
+
+{
+  "specialization": "Невролог"
+}
+
+###
+
+DELETE http://localhost:8080/api/v1/doctors/1
+
+
+### PATIENTS
+
+GET http://localhost:8080/api/v1/patients
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/v1/patients/1
+Accept: application/json
+
+###
+
+POST http://localhost:8080/api/v1/patients
+Content-Type: application/json
+
+{
+  "firstName": "Катерина",
+  "lastName": "Дорофтей",
+  "dateOfBirth": "2007-02-27",
+  "phone": "+380990128525",
+  "email": "kateryna@gmail.com"
+}
+
+###
+
+PUT http://localhost:8080/api/v1/patients/1
+Content-Type: application/json
+
+{
+  "firstName": "Катерина",
+  "lastName": "Дорофтей",
+  "dateOfBirth": "2007-02-27",
+  "phone": "+380990128525",
+  "email": "kate.updated@gmail.com"
+}
+
+###
+
+PATCH http://localhost:8080/api/v1/patients/1
+Content-Type: application/json
+
+{
+  "phone": "+380981111111"
+}
+
+###
+
+DELETE http://localhost:8080/api/v1/patients/1
+
+
+### EQUIPMENT
+
+GET http://localhost:8080/api/v1/equipment
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/v1/equipment/1
+Accept: application/json
+
+###
+
+POST http://localhost:8080/api/v1/equipment
+Content-Type: application/json
+
+{
+  "name": "Мікроскоп",
+  "model": "Olympus CX23",
+  "serialNumber": "SN-003",
+  "status": "ACTIVE",
+  "lastServiceDate": "2026-04-29"
+}
+
+###
+
+PUT http://localhost:8080/api/v1/equipment/1
+Content-Type: application/json
+
+{
+  "name": "Гематологічний аналізатор",
+  "model": "Sysmex XN-1000",
+  "serialNumber": "SN-001",
+  "status": "MAINTENANCE",
+  "lastServiceDate": "2026-04-29"
+}
+
+###
+
+PATCH http://localhost:8080/api/v1/equipment/1
+Content-Type: application/json
+
+{
+  "status": "ACTIVE"
+}
+
+###
+
+DELETE http://localhost:8080/api/v1/equipment/1
+
+
+### LAB TESTS
+
+GET http://localhost:8080/api/v1/lab-tests
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/v1/lab-tests/1
+Accept: application/json
+
+###
+
+POST http://localhost:8080/api/v1/lab-tests
+Content-Type: application/json
+
+{
+  "name": "Біохімічний аналіз крові",
+  "description": "Комплексне дослідження показників крові",
+  "category": "Biochemistry",
+  "price": 350.0
+}
+
+###
+
+PUT http://localhost:8080/api/v1/lab-tests/1
+Content-Type: application/json
+
+{
+  "name": "Загальний аналіз крові",
+  "description": "Оновлений опис аналізу крові",
+  "category": "Hematology",
+  "price": 180.0
+}
+
+###
+
+PATCH http://localhost:8080/api/v1/lab-tests/1
+Content-Type: application/json
+
+{
+  "price": 200.0
+}
+
+###
+
+DELETE http://localhost:8080/api/v1/lab-tests/1
+
+
+### TEST RESULTS
+
+GET http://localhost:8080/api/v1/test-results
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/v1/test-results/1
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/v1/test-results/patient/1
+Accept: application/json
+
+###
+
+POST http://localhost:8080/api/v1/test-results
+Content-Type: application/json
+
+{
+  "patientId": 1,
+  "labTestId": 1,
+  "doctorId": 1,
+  "resultValue": "5.2",
+  "unit": "mmol/L",
+  "status": "COMPLETED",
+  "createdAt": "2026-04-29"
+}
+
+###
+
+PUT http://localhost:8080/api/v1/test-results/1
+Content-Type: application/json
+
+{
+  "patientId": 1,
+  "labTestId": 1,
+  "doctorId": 1,
+  "resultValue": "4.9",
+  "unit": "mmol/L",
+  "status": "COMPLETED",
+  "createdAt": "2026-04-29"
+}
+
+###
+
+PATCH http://localhost:8080/api/v1/test-results/1
+Content-Type: application/json
+
+{
+  "status": "PENDING"
+}
+
+###
+
+DELETE http://localhost:8080/api/v1/test-results/2
